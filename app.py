@@ -566,4 +566,5 @@ with gr.Blocks(css=custom_css, theme=gr.themes.Soft(), title="AI Call Emotion An
 
 # Launch configuration
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=8080)
+    port = int(os.environ.get("PORT", 8080))  # fallback to 8080 locally
+    demo.launch(server_name="0.0.0.0", server_port=port)
